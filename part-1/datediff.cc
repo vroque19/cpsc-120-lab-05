@@ -1,3 +1,13 @@
+// Vanessa Roque
+// CPSC 120-19
+// 2021-10-07
+// vroque19@csu.fullerton.edu
+// @vroque19
+//
+// Lab 05-01
+//
+// Date difference with command line arguments
+//
 
 /// Program to calculate the date between two Gregorian dates.
 
@@ -6,7 +16,6 @@
 #include <vector>
 
 using namespace std;
-
 /// Convert a Gregorian calendar date to a Julian day number
 ///
 /// Given a date of the form YYYY/MM/DD such as 12/25/2021, convert the
@@ -21,6 +30,10 @@ using namespace std;
 int GregorianToJulian(int day, int month, int year) {
   int julian_day_number = 0;
 
+  julian_day_number = day - 32075 + 1461
+    * (year + 4800 + (month - 14) / 12) / 4
+    + 367 * (month - 2 - (month - 14) / 12 * 12) / 12 - 3
+    * ((year + 4900 + (month - 14) / 12) / 100) / 4;
   // TODO: write the implementation
 
   return julian_day_number;
