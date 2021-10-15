@@ -26,6 +26,15 @@ using namespace std;
 /// \remark This is in the inverse of NumericValueToFaceValue()
 int NumericValue(const string &face_value) {
   int numeric_value = 0;
+
+  try{
+    numeric_value = stoi(face_value);
+  } catch(exception const& problem){
+    cout << "Problem converting the face value to a number. \n";
+    cout << problem.what() << " \n";
+    exit(1);
+  }
+
   if(face_value == "A") {
     numeric_value = 11;
   } else if (face_value == "J") {
@@ -34,7 +43,7 @@ int NumericValue(const string &face_value) {
     numeric_value = 10;
   } else if (face_value == "K") {
     numeric_value = 10;
-  }
+  } 
 
   // Implement the function
 
@@ -90,24 +99,32 @@ int main(int argc, char const *argv[]) {
     return 1;
   }
 
-  int card_one_value;
-  int card_two_value;
+  int card_one_value = 0;
+  int card_two_value = 0;
   int sum = 0;
 
 
-  cout << &NumericValue << " \n";
- 
-  // TODO: Find the valuEes of card_one and card_two
-  // f(x) g(x)
-  // g(f(x))
-  // NumericValue(FaceValue(card_one));
+  string card_one_face_value = FaceValue(card_one);
+  cout << "The face value of card one is " << card_one_face_value << " \n";
+  string card_two_face_value = FaceValue(card_two);
+  cout << "The face value of card two is " << card_two_face_value << " \n";
+
+
+  // The types must match
+  // stoi means string to integer
+
+  card_one_value = NumericValue(card_one_face_value);
+  card_two_value = NumericValue(card_two_face_value);
+  sum = card_one_value + card_two_value;
 
   // TODO: Sum the value of the cards
 
   sum = NumericValue(FaceValue(card_one)) + NumericValue(FaceValue(card_two));
 
   // TODO: If both cards are aces, subtract 10 from the sum
-
+if(sum == 22){
+  sum = sum - 10;
+} 
 
   cout << card_one << " + " << card_two << " = " << sum << "\n";
 
