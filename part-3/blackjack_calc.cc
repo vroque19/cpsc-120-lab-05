@@ -29,7 +29,7 @@ int NumericValue(const string &face_value) {
 
   try{
     numeric_value = stoi(face_value);
-  } catch(exception const& problem){
+  } catch(exception const& problem) {
     cout << "Problem converting the face value to a number. \n";
     cout << problem.what() << " \n";
     exit(1);
@@ -44,8 +44,6 @@ int NumericValue(const string &face_value) {
   } else if (face_value == "K") {
     numeric_value = 10;
   } 
-
-  // Implement the function
 
   return numeric_value;
 }
@@ -103,30 +101,20 @@ int main(int argc, char const *argv[]) {
   int card_two_value = 0;
   int sum = 0;
 
-
   string card_one_face_value = FaceValue(card_one);
   cout << "The face value of card one is " << card_one_face_value << " \n";
   string card_two_face_value = FaceValue(card_two);
   cout << "The face value of card two is " << card_two_face_value << " \n";
 
-
-  // The types must match
-  // stoi means string to integer
-
   card_one_value = NumericValue(card_one_face_value);
   card_two_value = NumericValue(card_two_face_value);
   sum = card_one_value + card_two_value;
 
-  // TODO: Sum the value of the cards
-
   sum = NumericValue(FaceValue(card_one)) + NumericValue(FaceValue(card_two));
 
-  // TODO: If both cards are aces, subtract 10 from the sum
-if(sum == 22){
-  sum = sum - 10;
-} 
-
+  if(sum == 22) {
+   sum = sum - 10;
+  } 
   cout << card_one << " + " << card_two << " = " << sum << "\n";
-
   return sum;
 }
