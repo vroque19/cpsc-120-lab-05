@@ -39,9 +39,6 @@ int IntegerSquareRoot(int input_number) {
     square_root = initial_estimate;
   }
   return square_root;
-
-    
-  // TODO: Implement the integer square root algorithm
 }
 
   
@@ -72,20 +69,12 @@ int main(int argc, char const* argv[]) {
 
   bool is_prime_flag = true;
 
-  // TODO: Write the trial division algorithm using your own integer suqare root
-  // function to control the loop.
-
   for(int counter = 2; counter <= IntegerSquareRoot(input_number); counter++) {
-    if(input_number % counter == 0) {
+    if(input_number % counter == 0){
      is_prime_flag = false;
+     break;
     }
-  
   }
-
-
-
-
-
   cout << input_number;
   if (is_prime_flag == true) {
     cout << " is prime.\n";
