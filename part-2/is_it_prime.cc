@@ -1,4 +1,10 @@
-
+// Vanessa Roque
+// CPSC 120-19
+// 2021-10-12
+// 
+// Lab-05-02
+//
+//
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,8 +23,28 @@ using namespace std;
 /// \param input_number The number to be square rooted
 /// returns the integer square root of input_number
 int IntegerSquareRoot(int input_number) {
+
+  int square_root = 0;
+  int initial_estimate = input_number / 2;
+  int next_estimate = 0;
+
+  if (initial_estimate == 0) {
+    square_root = input_number;
+  } else {
+    next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
+    while(next_estimate < initial_estimate) {
+      initial_estimate = next_estimate;
+      next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
+    }
+    square_root = initial_estimate;
+  }
+  return square_root;
+
+    
   // TODO: Implement the integer square root algorithm
 }
+
+  
 
 /// Main function - the entry point to our program
 int main(int argc, char const* argv[]) {
@@ -49,8 +75,19 @@ int main(int argc, char const* argv[]) {
   // TODO: Write the trial division algorithm using your own integer suqare root
   // function to control the loop.
 
+  for(int counter = 2; counter <= IntegerSquareRoot(input_number); counter++) {
+    if(input_number % counter == 0) {
+     is_prime_flag = false;
+    }
+  
+  }
+
+
+
+
+
   cout << input_number;
-  if (is_prime_flag) {
+  if (is_prime_flag == true) {
     cout << " is prime.\n";
   } else {
     cout << " is not prime.\n";

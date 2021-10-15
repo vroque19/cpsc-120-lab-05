@@ -1,9 +1,19 @@
-
+// Vanessa Roque
+// CPSC 120-19
+// 2021-10-07
+// vroque19@csu.fullerton.edu
+// @vroque19
+//
+// Lab 05-03
+//
+// Converts face values to numeric value
+//
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
+
 
 /// NumericValue takes the \p face_value of a card as a string
 /// and returns the numeric_value of the card as an int
@@ -16,8 +26,17 @@ using namespace std;
 /// \remark This is in the inverse of NumericValueToFaceValue()
 int NumericValue(const string &face_value) {
   int numeric_value = 0;
+  if(face_value == "A") {
+    numeric_value = 11;
+  } else if (face_value == "J") {
+    numeric_value = 10;
+  } else if (face_value == "Q") {
+    numeric_value = 10;
+  } else if (face_value == "K") {
+    numeric_value = 10;
+  }
 
-  // TODO: Implement the function
+  // Implement the function
 
   return numeric_value;
 }
@@ -71,16 +90,26 @@ int main(int argc, char const *argv[]) {
     return 1;
   }
 
-  int card_one_value = 0;
-  int card_two_value = 0;
+  int card_one_value;
+  int card_two_value;
   int sum = 0;
-  // TODO: Find the valuEes of card_one and card_two
 
-  // TODO: If both cards are aces, subtract 10 from the sum
+
+  cout << &NumericValue << " \n";
+ 
+  // TODO: Find the valuEes of card_one and card_two
+  // f(x) g(x)
+  // g(f(x))
+  // NumericValue(FaceValue(card_one));
 
   // TODO: Sum the value of the cards
 
+  sum = NumericValue(FaceValue(card_one)) + NumericValue(FaceValue(card_two));
+
+  // TODO: If both cards are aces, subtract 10 from the sum
+
+
   cout << card_one << " + " << card_two << " = " << sum << "\n";
 
-  return 0;
+  return sum;
 }
