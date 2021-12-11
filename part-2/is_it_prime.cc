@@ -2,11 +2,11 @@
 // CPSC 120-19
 // 2021-10-12
 // vroque19@csu.fullerton.edu
-// vroque19
+// @vroque19
 //
 // Lab-05-02
 //
-// Checks to see if a number is prime using the integer Square Root function
+// Checks to see if a number is prime using integer Square Root function
 //
 #include <iostream>
 #include <string>
