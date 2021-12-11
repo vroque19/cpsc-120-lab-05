@@ -30,10 +30,10 @@ using namespace std;
 int GregorianToJulian(int day, int month, int year) {
   int julian_day_number = 0;
 
-  julian_day_number = day - 32075 + 1461
-    * (year + 4800 + (month - 14) / 12) / 4
-    + 367 * (month - 2 - (month - 14) / 12 * 12) / 12 - 3
-    * ((year + 4900 + (month - 14) / 12) / 100) / 4;
+  julian_day_number = day - 32075 +
+                      1461 * (year + 4800 + (month - 14) / 12) / 4 +
+                      367 * (month - 2 - (month - 14) / 12 * 12) / 12 -
+                      3 * ((year + 4900 + (month - 14) / 12) / 100) / 4;
   //  write the implementation
 
   return julian_day_number;
