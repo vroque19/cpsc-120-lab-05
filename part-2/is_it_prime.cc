@@ -4,9 +4,9 @@
 // vroque19@csu.fullerton.edu
 // @vroque19
 //
-// Lab-05-02
+// Lab 05-02
 //
-// Checks to see if a number is prime using integer Square Root function
+// Checks to see if a number is prime
 //
 #include <iostream>
 #include <string>
