@@ -35,7 +35,7 @@ int IntegerSquareRoot(int input_number) {
     square_root = input_number;
   } else {
     next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
-    while(next_estimate < initial_estimate) {
+    while (next_estimate < initial_estimate) {
       initial_estimate = next_estimate;
       next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
     }
@@ -72,8 +72,8 @@ int main(int argc, char const* argv[]) {
 
   bool is_prime_flag = true;
 
-  for(int counter = 2; counter <= IntegerSquareRoot(input_number); counter++) {
-    if(input_number % counter == 0){
+  for (int counter = 2; counter <= IntegerSquareRoot(input_number); counter++) {
+    if (input_number % counter == 0) {
      is_prime_flag = false;
      break;
     }

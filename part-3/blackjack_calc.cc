@@ -27,15 +27,15 @@ using namespace std;
 int NumericValue(const string &face_value) {
   int numeric_value = 0;
 
-  try{
+  try {
     numeric_value = stoi(face_value);
-  } catch(exception const& problem) {
+  } catch (exception const& problem) {
     cout << "Problem converting the face value to a number. \n";
     cout << problem.what() << " \n";
     exit(1);
   }
 
-  if(face_value == "A") {
+  if (face_value == "A") {
     numeric_value = 11;
   } else if (face_value == "J") {
     numeric_value = 10;
@@ -112,7 +112,7 @@ int main(int argc, char const *argv[]) {
 
   sum = NumericValue(FaceValue(card_one)) + NumericValue(FaceValue(card_two));
 
-  if(sum == 22) {
+  if (sum == 22) {
    sum = sum - 10;
   } 
   cout << card_one << " + " << card_two << " = " << sum << "\n";
