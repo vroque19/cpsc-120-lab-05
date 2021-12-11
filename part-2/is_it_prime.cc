@@ -74,8 +74,8 @@ int main(int argc, char const* argv[]) {
 
   for (int counter = 2; counter <= IntegerSquareRoot(input_number); counter++) {
     if (input_number % counter == 0) {
-     is_prime_flag = false;
-     break;
+      is_prime_flag = false;
+      break;
     }
   }
   cout << input_number;

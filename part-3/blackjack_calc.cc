@@ -114,7 +114,7 @@ int main(int argc, char const *argv[]) {
 
   if (sum == 22) {
     sum = sum - 10;
-  } 
+  }
   cout << card_one << " + " << card_two << " = " << sum << "\n";
   return sum;
 }
